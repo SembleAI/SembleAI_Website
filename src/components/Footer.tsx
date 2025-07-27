@@ -33,7 +33,7 @@ export const Footer = () => {
             {/* Brand */}
             <div className="col-span-1 md:col-span-1">
               <div className="flex items-center mb-4">
-                <img src="/lovable-uploads/7d2b6d85-1de2-4c38-bcbb-425b95e6cfab.png" alt="CADence Logo" className="h-8 w-8 mr-3" />
+                <img src="/logo.png" alt="CADence Logo" className="h-8 w-8 mr-3" />
                 <div className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                   CADence
                 </div>
