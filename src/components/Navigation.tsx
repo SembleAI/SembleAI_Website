@@ -11,6 +11,7 @@ export const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center">
+            <img src="/lovable-uploads/7d2b6d85-1de2-4c38-bcbb-425b95e6cfab.png" alt="CADence Logo" className="h-8 w-8 mr-3" />
             <div className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               CADence
             </div>
