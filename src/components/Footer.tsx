@@ -8,39 +8,20 @@ export const Footer = () => {
       <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Ready to revolutionize your design process?
+            Interested in revolutionizing your design process?
           </h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Join leading systems integrators who are already saving 90% of their 
-            engineering time with CADence AI automation.
+            Join our waitlist to be among the first to experience CADence when we launch. 
+            Get early access and help shape the future of fire and security system design.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-            <Button variant="hero" size="xl" className="min-w-[200px]">
-              Start free trial
-              <ArrowRight className="ml-2 h-5 w-5" />
+          <div className="flex flex-col items-center justify-center gap-6 mb-12">
+            <Button variant="hero" size="xl" className="min-w-[250px]">
+              <Mail className="mr-2 h-5 w-5" />
+              Join the waitlist
             </Button>
-            <Button variant="outline" size="xl" className="min-w-[200px]">
-              Schedule demo
-            </Button>
-          </div>
-          
-          {/* Contact Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
-            <div className="bg-card rounded-lg border border-border p-6 text-center">
-              <Mail className="h-8 w-8 text-primary mx-auto mb-3" />
-              <h3 className="font-semibold text-foreground mb-2">Email Us</h3>
-              <p className="text-muted-foreground text-sm">hello@cadence.ai</p>
-            </div>
-            <div className="bg-card rounded-lg border border-border p-6 text-center">
-              <Phone className="h-8 w-8 text-primary mx-auto mb-3" />
-              <h3 className="font-semibold text-foreground mb-2">Call Sales</h3>
-              <p className="text-muted-foreground text-sm">+1 (555) 123-4567</p>
-            </div>
-            <div className="bg-card rounded-lg border border-border p-6 text-center">
-              <MapPin className="h-8 w-8 text-primary mx-auto mb-3" />
-              <h3 className="font-semibold text-foreground mb-2">Visit Us</h3>
-              <p className="text-muted-foreground text-sm">San Francisco, CA</p>
-            </div>
+            <p className="text-sm text-muted-foreground">
+              Or reach out directly at <a href="mailto:hello@cadence.ai" className="text-primary hover:underline font-medium">hello@cadence.ai</a>
+            </p>
           </div>
         </div>
       </section>
@@ -64,9 +45,8 @@ export const Footer = () => {
               <h3 className="font-semibold text-foreground mb-4">Product</h3>
               <ul className="space-y-3 text-sm text-muted-foreground">
                 <li><a href="#features" className="hover:text-primary transition-colors">Features</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Pricing</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Integrations</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">API</a></li>
+                <li><a href="#benefits" className="hover:text-primary transition-colors">Benefits</a></li>
+                <li><a href="#solutions" className="hover:text-primary transition-colors">Solutions</a></li>
               </ul>
             </div>
 

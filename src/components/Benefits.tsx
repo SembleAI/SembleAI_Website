@@ -82,14 +82,10 @@ export const Benefits = () => {
             With engineering time savings of 90%, most customers see a complete return 
             on investment within 30 days of implementation.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button variant="hero" size="xl">
-              Calculate your savings
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <Button variant="outline" size="xl">
-              Schedule demo
-            </Button>
+          <div className="bg-muted/50 border border-border rounded-lg px-6 py-3 inline-block">
+            <p className="text-foreground font-medium">
+              Coming Soon - Early access available
+            </p>
           </div>
         </div>
       </div>

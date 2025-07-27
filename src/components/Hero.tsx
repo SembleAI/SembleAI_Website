@@ -28,16 +28,11 @@ export const Hero = () => {
             with full code compliance and regulatory approval.
           </p>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-            <Button variant="hero" size="xl" className="min-w-[200px]">
-              Get started
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <Button variant="outline" size="xl" className="min-w-[200px]">
-              <Play className="mr-2 h-5 w-5" />
-              Watch demo
-            </Button>
+          {/* Coming Soon Notice */}
+          <div className="bg-muted/50 border border-border rounded-lg px-6 py-4 mb-16 max-w-lg mx-auto">
+            <p className="text-foreground font-medium text-center">
+              Coming Soon - Join our waitlist for early access
+            </p>
           </div>
 
           {/* Stats */}

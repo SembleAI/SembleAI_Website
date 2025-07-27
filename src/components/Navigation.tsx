@@ -30,12 +30,6 @@ export const Navigation = () => {
             <a href="#contact" className="text-foreground hover:text-primary transition-colors">
               Contact
             </a>
-            <Button variant="outline" size="sm">
-              Sign in
-            </Button>
-            <Button variant="hero" size="sm">
-              Get started
-            </Button>
           </div>
 
           {/* Mobile menu button */}
@@ -66,14 +60,6 @@ export const Navigation = () => {
               <a href="#contact" className="text-foreground hover:text-primary transition-colors">
                 Contact
               </a>
-              <div className="flex flex-col space-y-2 pt-4">
-                <Button variant="outline" size="sm">
-                  Sign in
-                </Button>
-                <Button variant="hero" size="sm">
-                  Get started
-                </Button>
-              </div>
             </div>
           </div>
         )}
