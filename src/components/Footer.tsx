@@ -1,31 +1,10 @@
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Mail, Phone, MapPin } from "lucide-react"
-import logoSvg from "../assets/logo.svg?url"
+import logoSvg from "../assets/logo_new.svg?url"
 
 export const Footer = () => {
   return (
     <footer className="bg-muted/50 border-t border-border">
-      {/* CTA Section */}
-      <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Interested in revolutionizing your design process?
-          </h2>
-          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Join our waitlist to be among the first to experience Cadence when we launch. 
-            Get early access and help shape the future of fire and security system design.
-          </p>
-          <div className="flex flex-col items-center justify-center gap-6 mb-12">
-            <Button variant="hero" size="xl" className="min-w-[250px]">
-              <Mail className="mr-2 h-5 w-5" />
-              Join the waitlist
-            </Button>
-            <p className="text-sm text-muted-foreground">
-              Or reach out directly at <a href="mailto:hello@Cadence.ai" className="text-primary hover:underline font-medium">hello@Cadence.ai</a>
-            </p>
-          </div>
-        </div>
-      </section>
 
       {/* Footer Links */}
       <div className="border-t border-border py-12 px-4 sm:px-6 lg:px-8">
@@ -37,10 +16,7 @@ export const Footer = () => {
                 <img 
                   src={logoSvg} 
                   alt="Cadence Logo" 
-                  className="h-8 w-8 mr-3" 
-                  style={{
-                    filter: 'invert(1) brightness(0.8)' // Invert colors and adjust brightness for better contrast
-                  }}
+                  className="h-8 w-auto mr-3" 
                 />
                 <div className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                   Cadence

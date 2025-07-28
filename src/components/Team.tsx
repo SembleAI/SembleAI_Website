@@ -11,7 +11,7 @@ export const Team = () => {
             Meet the <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Team</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            The engineers and innovators behind CADence's AI-powered design automation.
+            The engineers and innovators behind Cadence's AI-powered design automation.
           </p>
         </div>
 
@@ -31,11 +31,11 @@ export const Team = () => {
             </div>
             
             <p className="text-muted-foreground leading-relaxed mb-6">
-              Ethan, co-founder and CTO of CADence, became obsessed with building tools that fix broken 
-              technical workflows while researching AI safety and infrastructure at Stanford's AI Lab. He realized 
-              how AI could be applied to everyday bottlenecks that slow down engineers. At CADence, he's focused on bringing AI-powered structure and 
-              intelligence to CAD conversion, helping engineers spend less time fixing files and more 
-              time solving real design problems.
+              Ethan, co-founder and CTO of Cadence, leads the technical development of our AI platform. 
+              With a background in AI research at Stanford's AI Lab, he's passionate about applying 
+              machine learning to solve complex engineering challenges. At Cadence, he's focused on 
+              developing AI systems that automate fire and security design processes, helping engineers 
+              reduce project time from hundreds of hours to minutes while ensuring full code compliance.
             </p>
             
             <a 
@@ -64,12 +64,11 @@ export const Team = () => {
             </div>
             
             <p className="text-muted-foreground leading-relaxed mb-6">
-              Jonathan, co-founder and CEO of CADence, spent two years working at an 
-              aviation engineering firm where he saw firsthand how much time and money
-              were lost due to broken CAD conversions between suppliers and OEMs. Watching 
-              engineers manually fix models and rebuild parts just to meet formatting or 
-              compliance requirements sparked the idea for a better solution. At CADence, 
-              he's building the platform he wishes his team had.
+              Jonathan, co-founder and CEO of Cadence, identified critical inefficiencies in fire and 
+              security system design while working in the engineering industry. After witnessing teams 
+              spend hundreds of hours on manual design processes that could be automated, he founded 
+              Cadence to revolutionize the industry. Jonathan now leads the company's mission to transform 
+              fire and security system design through AI-powered automation and regulatory compliance.
             </p>
             
             <a 

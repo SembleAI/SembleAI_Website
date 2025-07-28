@@ -51,14 +51,28 @@ export const Contact = () => {
   }
 
   return (
-    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
-      <div className="max-w-7xl mx-auto">
+    <section id="contact" className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 z-0">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-80"
+          style={{
+            backgroundImage: 'url(/house-plan-bg.png)',
+            transform: 'scale(1.02)', // Slight zoom for better positioning
+          }}
+        />
+        {/* Overlay layers to ensure text readability */}
+        <div className="absolute inset-0 bg-background/70" />
+        <div className="absolute inset-0 bg-gradient-to-br from-background/50 via-background/60 to-background/70" />
+      </div>
+      
+      <div className="relative z-10 max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4 drop-shadow-sm">
             Ready to Transform Your Design Process?
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Get in touch to learn more about CADence and how we can help automate your fire and security system designs.
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto drop-shadow-sm">
+            Get in touch to learn more about Cadence and how we can help automate your fire and security system designs.
           </p>
         </div>
 
@@ -66,9 +80,9 @@ export const Contact = () => {
           {/* Contact Information */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-semibold text-foreground mb-6">Get in Touch</h3>
+              <h3 className="text-2xl font-semibold text-foreground mb-6 drop-shadow-sm">Get in Touch</h3>
               <div className="space-y-4">
-                <div className="flex items-center space-x-3">
+                <div className="flex items-center space-x-3 bg-background/60 backdrop-blur-sm p-4 rounded-lg border border-border/30">
                   <div className="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
                     <Mail className="w-5 h-5 text-primary" />
                   </div>
@@ -78,7 +92,7 @@ export const Contact = () => {
                   </div>
                 </div>
                 
-                <div className="flex items-center space-x-3">
+                <div className="flex items-center space-x-3 bg-background/60 backdrop-blur-sm p-4 rounded-lg border border-border/30">
                   <div className="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
                     <Phone className="w-5 h-5 text-primary" />
                   </div>
@@ -88,20 +102,20 @@ export const Contact = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center space-x-3">
+                <div className="flex items-center space-x-3 bg-background/60 backdrop-blur-sm p-4 rounded-lg border border-border/30">
                   <div className="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
                     <MapPin className="w-5 h-5 text-primary" />
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Location</p>
-                    <p className="text-foreground font-medium">United States</p>
+                    <p className="text-foreground font-medium">San Francisco, CA</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="bg-background/60 backdrop-blur-sm border border-border rounded-lg p-6">
-              <h4 className="text-lg font-semibold text-foreground mb-3">Why Choose CADence?</h4>
+            <div className="bg-background/60 backdrop-blur-sm border border-border rounded-lg p-6 shadow-lg">
+              <h4 className="text-lg font-semibold text-foreground mb-3">Why Choose Cadence?</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-center space-x-2">
                   <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
@@ -193,7 +207,7 @@ export const Contact = () => {
                     name="subject"
                     required
                     className="w-full"
-                    placeholder="Interested in CADence"
+                    placeholder="Interested in Cadence"
                   />
                 </div>
 

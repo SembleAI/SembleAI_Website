@@ -42,14 +42,6 @@ export const Hero = () => {
             Transform 300-hour engineering projects into 30-minute automated workflows 
             with full code compliance and regulatory approval.
           </p>
-
-          {/* Coming Soon Notice */}
-          <div className="bg-background/85 backdrop-blur-sm border border-border/50 rounded-lg px-6 py-4 mb-16 max-w-lg mx-auto shadow-xl">
-            <p className="text-foreground font-medium text-center">
-              Coming Soon - Join our waitlist for early access
-            </p>
-          </div>
-
           {/* Stats */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="text-center bg-background/70 backdrop-blur-sm rounded-lg p-6 border border-border/30 shadow-lg">

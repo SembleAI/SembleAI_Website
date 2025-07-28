@@ -83,16 +83,7 @@ export const Solutions = () => {
                   ))}
                 </ul>
               </div>
-              
-              <div className="bg-muted/50 rounded-lg p-4 mb-6">
-                <div className="text-sm font-medium text-foreground mb-1">Success Story</div>
-                <div className="text-sm text-muted-foreground italic">"{solution.caseStudy}"</div>
-              </div>
-              
-              <Button variant="outline" className="w-full">
-                Learn more
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
+
             </Card>
           ))}
         </div>

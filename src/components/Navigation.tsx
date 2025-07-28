@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import { useState } from "react"
-import logoSvg from "../assets/logo.svg?url"
+import logoSvg from "../assets/logo_new.svg?url"
 
 export const Navigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -15,10 +15,7 @@ export const Navigation = () => {
             <img 
               src={logoSvg} 
               alt="Cadence Logo" 
-              className="h-8 w-8 mr-3" 
-              style={{
-                filter: 'invert(1) brightness(0.8)' // Invert colors and adjust brightness for better contrast
-              }}
+              className="h-8 w-auto mr-3" 
             />
             <div className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               Cadence
