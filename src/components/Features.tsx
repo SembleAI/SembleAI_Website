@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Brain, Shield, Clock, FileText, MapPin, Users } from "lucide-react"
+import { FadeIn } from "@/components/ui/fade-in"
 
 export const Features = () => {
   const features = [
@@ -51,46 +52,55 @@ export const Features = () => {
   return (
     <section id="features" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Powerful features built for the industry
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Everything you need to automate fire and security system design, 
-            from AI-powered analysis to full regulatory compliance.
-          </p>
-        </div>
+        <FadeIn>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+              Powerful <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Features</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Everything you need to transform your fire and security system design workflow
+            </p>
+          </div>
+        </FadeIn>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((feature, index) => (
-            <Card key={index} className="p-6 hover:shadow-lg transition-all duration-300 border-border bg-card">
-              <div className="flex items-start justify-between mb-4">
-                <div className="p-3 rounded-lg bg-primary/10">
-                  <feature.icon className="h-6 w-6 text-primary" />
-                </div>
-                <Badge variant="secondary" className="text-xs">
-                  {feature.badge}
-                </Badge>
-              </div>
-              
-              <h3 className="text-xl font-semibold text-foreground mb-3">
-                {feature.title}
-              </h3>
-              
-              <p className="text-muted-foreground mb-4 leading-relaxed">
-                {feature.description}
-              </p>
-              
-              <ul className="space-y-2">
-                {feature.highlights.map((highlight, idx) => (
-                  <li key={idx} className="flex items-center text-sm text-muted-foreground">
-                    <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3"></div>
-                    {highlight}
-                  </li>
-                ))}
-              </ul>
-            </Card>
-          ))}
+          {features.map((feature, index) => {
+            const Icon = feature.icon
+            return (
+              <FadeIn key={feature.title} delay={index * 0.1} direction="up">
+                <Card className="p-6 h-full bg-background/60 backdrop-blur-sm border-border/50 hover:bg-background/80 transition-all duration-300 hover:shadow-xl hover:scale-105">
+                  <div className="flex items-start space-x-4 mb-4">
+                    <div className="flex-shrink-0">
+                      <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                        <Icon className="w-6 h-6 text-primary" />
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center space-x-2 mb-2">
+                        <h3 className="text-xl font-semibold text-foreground">{feature.title}</h3>
+                        <Badge variant="secondary" className="text-xs">
+                          {feature.badge}
+                        </Badge>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <p className="text-muted-foreground mb-4 leading-relaxed">
+                    {feature.description}
+                  </p>
+                  
+                  <ul className="space-y-2">
+                    {feature.highlights.map((highlight, idx) => (
+                      <li key={idx} className="flex items-center text-sm text-muted-foreground">
+                        <div className="w-1.5 h-1.5 bg-primary rounded-full mr-2 flex-shrink-0"></div>
+                        {highlight}
+                      </li>
+                    ))}
+                  </ul>
+                </Card>
+              </FadeIn>
+            )
+          })}
         </div>
       </div>
     </section>

@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Play } from "lucide-react"
+import { FadeIn } from "@/components/ui/fade-in"
 
 export const Hero = () => {
   return (
@@ -22,41 +23,50 @@ export const Hero = () => {
       <div className="relative z-10 max-w-7xl mx-auto">
         <div className="text-center">
           {/* Badge */}
-          <div className="inline-flex items-center rounded-full border border-border/50 bg-background/80 backdrop-blur-sm px-4 py-2 text-sm text-muted-foreground mb-8 shadow-lg">
-            <span className="inline-block w-2 h-2 bg-primary rounded-full mr-2"></span>
-            Transforming Fire & Security Systems with AI
-          </div>
+          <FadeIn delay={0.2}>
+            <div className="inline-flex items-center rounded-full border border-border/50 bg-background/80 backdrop-blur-sm px-4 py-2 text-sm text-muted-foreground mb-8 shadow-lg">
+              <span className="inline-block w-2 h-2 bg-primary rounded-full mr-2"></span>
+              Transforming Fire & Security Systems with AI
+            </div>
+          </FadeIn>
 
           {/* Main Headline */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6 drop-shadow-sm">
-            With Cadence, fire and security 
-            <br />
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              system design is automated
-            </span>
-          </h1>
+          <FadeIn delay={0.4}>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6 drop-shadow-sm">
+              With Cadence, fire and security 
+              <br />
+              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                system design is automated
+              </span>
+            </h1>
+          </FadeIn>
 
           {/* Subheading */}
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed drop-shadow-sm">
-            AI-powered design automation for fire safety and security systems. 
-            Transform 300-hour engineering projects into 30-minute automated workflows 
-            with full code compliance and regulatory approval.
-          </p>
+          <FadeIn delay={0.6}>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed drop-shadow-sm">
+              AI-powered design automation for fire safety and security systems. 
+              Transform 300-hour engineering projects into 30-minute automated workflows 
+              with full code compliance and regulatory approval.
+            </p>
+          </FadeIn>
+
           {/* Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div className="text-center bg-background/70 backdrop-blur-sm rounded-lg p-6 border border-border/30 shadow-lg">
-              <div className="text-3xl font-bold text-primary mb-2 drop-shadow-sm">90%</div>
-              <div className="text-muted-foreground">Time Reduction</div>
+          <FadeIn delay={0.8}>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+              <div className="text-center bg-background/70 backdrop-blur-sm rounded-lg p-6 border border-border/30 shadow-lg">
+                <div className="text-3xl font-bold text-primary mb-2 drop-shadow-sm">90%</div>
+                <div className="text-muted-foreground">Time Reduction</div>
+              </div>
+              <div className="text-center bg-background/70 backdrop-blur-sm rounded-lg p-6 border border-border/30 shadow-lg">
+                <div className="text-3xl font-bold text-primary mb-2 drop-shadow-sm">300hrs → 30min</div>
+                <div className="text-muted-foreground">Design Speed</div>
+              </div>
+              <div className="text-center bg-background/70 backdrop-blur-sm rounded-lg p-6 border border-border/30 shadow-lg">
+                <div className="text-3xl font-bold text-primary mb-2 drop-shadow-sm">100%</div>
+                <div className="text-muted-foreground">Code Compliance</div>
+              </div>
             </div>
-            <div className="text-center bg-background/70 backdrop-blur-sm rounded-lg p-6 border border-border/30 shadow-lg">
-              <div className="text-3xl font-bold text-primary mb-2 drop-shadow-sm">300hrs → 30min</div>
-              <div className="text-muted-foreground">Design Speed</div>
-            </div>
-            <div className="text-center bg-background/70 backdrop-blur-sm rounded-lg p-6 border border-border/30 shadow-lg">
-              <div className="text-3xl font-bold text-primary mb-2 drop-shadow-sm">100%</div>
-              <div className="text-muted-foreground">Code Compliance</div>
-            </div>
-          </div>
+          </FadeIn>
         </div>
       </div>
 
