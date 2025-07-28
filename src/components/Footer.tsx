@@ -62,7 +62,7 @@ export const Footer = () => {
 
           <div className="border-t border-border mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
             <div className="text-sm text-muted-foreground mb-4 md:mb-0">
-              © 2024 Cadence. All rights reserved.
+              © 2025 Cadence. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm text-muted-foreground">
               <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
