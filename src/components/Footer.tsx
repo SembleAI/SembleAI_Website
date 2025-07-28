@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Mail, Phone, MapPin } from "lucide-react"
+import logoSvg from "../assets/logo.svg?url"
 
 export const Footer = () => {
   return (
@@ -11,7 +12,7 @@ export const Footer = () => {
             Interested in revolutionizing your design process?
           </h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Join our waitlist to be among the first to experience CADence when we launch. 
+            Join our waitlist to be among the first to experience Cadence when we launch. 
             Get early access and help shape the future of fire and security system design.
           </p>
           <div className="flex flex-col items-center justify-center gap-6 mb-12">
@@ -20,7 +21,7 @@ export const Footer = () => {
               Join the waitlist
             </Button>
             <p className="text-sm text-muted-foreground">
-              Or reach out directly at <a href="mailto:hello@cadence.ai" className="text-primary hover:underline font-medium">hello@cadence.ai</a>
+              Or reach out directly at <a href="mailto:hello@Cadence.ai" className="text-primary hover:underline font-medium">hello@Cadence.ai</a>
             </p>
           </div>
         </div>
@@ -33,9 +34,16 @@ export const Footer = () => {
             {/* Brand */}
             <div className="col-span-1 md:col-span-1">
               <div className="flex items-center mb-4">
-                <img src="/logo.png" alt="CADence Logo" className="h-8 w-8 mr-3" />
+                <img 
+                  src={logoSvg} 
+                  alt="Cadence Logo" 
+                  className="h-8 w-8 mr-3" 
+                  style={{
+                    filter: 'invert(1) brightness(0.8)' // Invert colors and adjust brightness for better contrast
+                  }}
+                />
                 <div className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                  CADence
+                  Cadence
                 </div>
               </div>
               <p className="text-muted-foreground text-sm mb-4">
@@ -78,7 +86,7 @@ export const Footer = () => {
 
           <div className="border-t border-border mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
             <div className="text-sm text-muted-foreground mb-4 md:mb-0">
-              © 2024 CADence. All rights reserved.
+              © 2024 Cadence. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm text-muted-foreground">
               <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>

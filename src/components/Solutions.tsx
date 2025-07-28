@@ -47,7 +47,7 @@ export const Solutions = () => {
             Solutions for every facility type
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            CADence adapts to the unique requirements of different building types, 
+            Cadence adapts to the unique requirements of different building types, 
             ensuring optimal safety and security design for any project.
           </p>
         </div>
@@ -100,7 +100,7 @@ export const Solutions = () => {
         {/* Process Overview */}
         <div className="bg-card rounded-2xl border border-border p-8 md:p-12">
           <h3 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-8">
-            How CADence transforms your workflow
+            How Cadence transforms your workflow
           </h3>
           
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">

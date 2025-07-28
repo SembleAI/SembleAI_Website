@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import { useState } from "react"
+import logoSvg from "../assets/logo.svg?url"
 
 export const Navigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -11,9 +12,16 @@ export const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <img src="/logo.png" alt="CADence Logo" className="h-8 w-8 mr-3" />
+            <img 
+              src={logoSvg} 
+              alt="Cadence Logo" 
+              className="h-8 w-8 mr-3" 
+              style={{
+                filter: 'invert(1) brightness(0.8)' // Invert colors and adjust brightness for better contrast
+              }}
+            />
             <div className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              CADence
+              Cadence
             </div>
           </div>
 
