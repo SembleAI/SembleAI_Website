@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Mail, Phone, MapPin } from "lucide-react"
-import logoSvg from "../assets/logo_new.svg?url"
+import logoSvg from "../assets/logo_no_bg.png?url"
 
 export const Footer = () => {
   return (

@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import { useState } from "react"
-import logoSvg from "../assets/logo_new.svg?url"
+import logoSvg from "../assets/logo_no_bg.png"
 
 export const Navigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
