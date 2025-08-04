@@ -14,8 +14,8 @@ export const Benefits = () => {
     {
       icon: CheckCircle,
       title: "First-Time Approval",
-      description: "Eliminate costly revision cycles with AHJ authorities. AI ensures code compliance from the start, reducing permit review time from months to days.",
-      metric: "95%",
+      description: "Eliminate costly revision cycles with AHJ authorities. Our AI ensures code compliance from the start, reducing permit review time from months to days.",
+      metric: "90%",
       metricLabel: "First-Time Pass Rate"
     },
     {

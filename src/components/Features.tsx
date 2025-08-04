@@ -17,7 +17,7 @@ export const Features = () => {
       title: "Complete System Coverage",
       badge: "Comprehensive",
       description: "Design fire-safety systems (alarms, sprinklers, detectors) in one unified platform.",
-      highlights: ["Fire protection systems", "fire-safety system design", "Integrated workflow"]
+      highlights: ["Fire protection systems", "Fire-safety system design", "Integrated workflow"]
     },
     {
       icon: Clock,

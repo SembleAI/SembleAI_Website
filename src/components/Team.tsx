@@ -36,7 +36,7 @@ export const Team = () => {
               
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Ethan, co-founder and CTO of Cadence, leads the technical development of our AI platform. 
-                With a background in AI research at Stanford's AI Lab, he's passionate about applying 
+                With a background in math and AI research at Stanford, he's passionate about applying 
                 machine learning to solve complex engineering challenges. At Cadence, he's focused on 
                 developing AI systems that automate fire-safety system design processes, helping engineers 
                 reduce project time from hundreds of hours to minutes while ensuring full code compliance.
