@@ -72,7 +72,7 @@ export const Contact = () => {
             Ready to Transform Your Design Process?
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto drop-shadow-sm">
-            Get in touch to learn more about Cadence and how we can help automate your fire and security system designs.
+            Get in touch to learn more about Cadence and how we can help automate your fire-safety system designs.
           </p>
         </div>
 
@@ -221,7 +221,7 @@ export const Contact = () => {
                     required
                     rows={4}
                     className="w-full"
-                    placeholder="Tell us about your fire and security system design needs..."
+                    placeholder="Tell us about your fire-safety system design needs..."
                   />
                 </div>
 

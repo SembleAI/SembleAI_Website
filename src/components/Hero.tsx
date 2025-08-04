@@ -26,14 +26,14 @@ export const Hero = () => {
           <FadeIn delay={0.2}>
             <div className="inline-flex items-center rounded-full border border-border/50 bg-background/80 backdrop-blur-sm px-4 py-2 text-sm text-muted-foreground mb-8 shadow-lg">
               <span className="inline-block w-2 h-2 bg-primary rounded-full mr-2"></span>
-              Transforming Fire & Security Systems with AI
+              Transforming Fire-Safety Systems with AI
             </div>
           </FadeIn>
 
           {/* Main Headline */}
           <FadeIn delay={0.4}>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6 drop-shadow-sm">
-              With Cadence, fire and security 
+              With Cadence, fire-safety 
               <br />
               <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                 system design is automated
@@ -44,7 +44,7 @@ export const Hero = () => {
           {/* Subheading */}
           <FadeIn delay={0.6}>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed drop-shadow-sm">
-              AI-powered design automation for fire safety and security systems. 
+              Your AI-powered fire-safety system engineer. 
               Transform 300-hour engineering projects into 30-minute automated workflows 
               with full code compliance and regulatory approval.
             </p>

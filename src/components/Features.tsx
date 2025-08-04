@@ -9,14 +9,14 @@ export const Features = () => {
       icon: Brain,
       title: "AI-Powered Design",
       badge: "Core Feature",
-      description: "Advanced AI analyzes your CAD files and automatically generates complete fire and security system layouts with optimal device placement and full code compliance.",
+      description: "Advanced AI analyzes your CAD files and automatically generates complete fire-safety system layouts with optimal device placement and full code compliance.",
       highlights: ["Automated CAD analysis", "Intelligent device placement", "Code compliance verification"]
     },
     {
       icon: Shield,
       title: "Complete System Coverage",
       badge: "Comprehensive",
-      description: "Design both fire safety systems (alarms, sprinklers, detectors) and security systems (cameras, access control, sensors) in one unified platform.",
+      description: "Design fire-safety systems (alarms, sprinklers, detectors) in one unified platform.",
       highlights: ["Fire protection systems", "Security system design", "Integrated workflow"]
     },
     {
@@ -58,7 +58,7 @@ export const Features = () => {
               Powerful <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Features</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Everything you need to transform your fire and security system design workflow
+              Everything you need to transform your fire-safety system design workflow
             </p>
           </div>
         </FadeIn>

@@ -9,7 +9,7 @@ export const Solutions = () => {
       icon: Building2,
       title: "Corporate Facilities",
       badge: "Most Popular",
-      description: "Office buildings, data centers, and corporate campuses with complex security and fire safety requirements.",
+      description: "Office buildings, data centers, and corporate campuses with complex fire safety requirements.",
       features: ["Multi-floor compliance", "Integrated access control", "Emergency egress planning"],
       caseStudy: "Reduced design time for 40-story office tower from 6 months to 2 weeks"
     },
@@ -17,7 +17,7 @@ export const Solutions = () => {
       icon: Hospital,
       title: "Healthcare Facilities",
       badge: "Specialized",
-      description: "Hospitals, clinics, and medical facilities requiring specialized life safety and security protocols.",
+      description: "Hospitals, clinics, and medical facilities requiring specialized life safety protocols.",
       features: ["NFPA 99 compliance", "Patient safety zones", "Medical equipment integration"],
       caseStudy: "Automated NFPA 99 compliance for 300-bed hospital renovation"
     },
@@ -26,16 +26,16 @@ export const Solutions = () => {
       title: "Retail & Hospitality",
       badge: "High Volume",
       description: "Shopping centers, hotels, restaurants, and entertainment venues with public safety focus.",
-      features: ["Crowd management", "Public assembly codes", "Retail security optimization"],
-      caseStudy: "Standardized security design across 50+ retail locations"
+      features: ["Crowd management", "Public assembly codes", "Retail fire-safety optimization"],
+      caseStudy: "Standardized fire-safety design across 50+ retail locations"
     },
     {
       icon: GraduationCap,
       title: "Educational Institutions",
       badge: "Safety First",
-      description: "Schools, universities, and educational facilities with enhanced security and emergency protocols.",
+      description: "Schools, universities, and educational facilities with enhanced fire-safety and emergency protocols.",
       features: ["Lockdown procedures", "Campus-wide integration", "Student safety zones"],
-      caseStudy: "Campus-wide security upgrade completed 80% faster"
+      caseStudy: "Campus-wide fire-safety upgrade completed 80% faster"
     }
   ]
 
@@ -48,7 +48,7 @@ export const Solutions = () => {
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Cadence adapts to the unique requirements of different building types, 
-            ensuring optimal safety and security design for any project.
+            ensuring optimal fire-safety design for any project.
           </p>
         </div>
 
