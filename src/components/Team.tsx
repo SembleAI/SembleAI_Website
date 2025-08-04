@@ -71,7 +71,7 @@ export const Team = () => {
               
               <p className="text-muted-foreground leading-relaxed mb-6">
                 After identifying critical inefficiencies in the fire-safety system integration workflow, Jonathan, 
-                co-founder and CEO of Cadence,joined a leading systems integrator to immerse himself in the industry.
+                co-founder and CEO of Cadence, joined a leading systems integrator to immerse himself in the industry.
                 After witnessing teams spend hundreds of hours on manual design processes that could be automated, he founded 
                 Cadence to revolutionize the industry. Jonathan now leads the company's mission to transform 
                 fire-safety system design through AI-powered automation and regulatory compliance.
