@@ -58,7 +58,7 @@ export const Hero = () => {
                 <div className="text-muted-foreground">Time Reduction</div>
               </div>
               <div className="text-center bg-background/70 backdrop-blur-sm rounded-lg p-6 border border-border/30 shadow-lg">
-                <div className="text-3xl font-bold text-primary mb-2 drop-shadow-sm">300hrs → 30min</div>
+                <div className="text-3xl font-bold text-primary mb-2 drop-shadow-sm">Weeks → Minutes</div>
                 <div className="text-muted-foreground">Design Speed</div>
               </div>
               <div className="text-center bg-background/70 backdrop-blur-sm rounded-lg p-6 border border-border/30 shadow-lg">
