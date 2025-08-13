@@ -29,9 +29,9 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: 'Missing required fields' });
     }
 
-    // Send email to both cofounders (individual emails for better deliverability)
+    // Send email using your verified domain
     const emailData = {
-      from: 'Cadence Contact Form <onboarding@resend.dev>', // Using Resend's verified domain temporarily
+      from: 'Cadence Contact Form <founders@cadence-systems.com>', // Using your verified domain
       subject: `New Contact Form Submission: ${subject}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -63,21 +63,24 @@ export default async function handler(req, res) {
       reply_to: reply_to,
     };
 
-    // Send to both email addresses individually for better deliverability
-    const recipients = ['founders@cadence-systems.com'];
-    const emailPromises = recipients.map(email => 
-      resend.emails.send({
-        ...emailData,
-        to: email
-      })
-    );
-
-    const results = await Promise.all(emailPromises);
+    // Send to founders email (will reach both you and your co-founder)
+    const result = await resend.emails.send({
+      ...emailData,
+      to: 'founders@cadence-systems.com'
+    });
     
-    console.log('Emails sent successfully:', results);
+    if (result.error) {
+      console.error('Resend API error:', result.error);
+      return res.status(400).json({ 
+        error: 'Failed to send email', 
+        details: result.error.message || result.error 
+      });
+    }
+    
+    console.log('Email sent successfully:', result);
     res.status(200).json({ 
-      message: 'Emails sent successfully', 
-      results: results.map(r => ({ id: r.data?.id, error: r.error }))
+      message: 'Email sent successfully', 
+      id: result.data?.id
     });
 
   } catch (error) {
