@@ -98,7 +98,7 @@ export const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Email</p>
-                    <p className="text-foreground font-medium">Use the form to reach us</p>
+                    <p className="text-foreground font-medium">founders@cadence-systems.com</p>
                   </div>
                 </div>
                 
