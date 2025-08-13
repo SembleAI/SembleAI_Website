@@ -64,7 +64,7 @@ export default async function handler(req, res) {
     };
 
     // Send to both email addresses individually for better deliverability
-    const recipients = ['ethan@cadence-systems.com', 'jonathan@cadence-systems.com'];
+    const recipients = ['founders@cadence-systems.com'];
     const emailPromises = recipients.map(email => 
       resend.emails.send({
         ...emailData,
