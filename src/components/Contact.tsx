@@ -2,13 +2,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Mail, Phone, MapPin, Send } from "lucide-react"
-import { useState, useRef, useEffect } from "react"
-
-declare global {
-  interface Window {
-    emailjs: any;
-  }
-}
+import { useState, useRef } from "react"
 
 export const Contact = () => {
   const formRef = useRef<HTMLFormElement>(null)
@@ -16,35 +10,51 @@ export const Contact = () => {
   const [status, setStatus] = useState<{ message: string; type: 'success' | 'error' | null }>({ message: '', type: null })
   const [formVisible, setFormVisible] = useState(true)
 
-  useEffect(() => {
-    // Load EmailJS script
-    const script = document.createElement('script')
-    script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js'
-    script.onload = () => {
-      window.emailjs.init("5HhT0MvIWc0BTo9L4")
-    }
-    document.head.appendChild(script)
-
-    return () => {
-      document.head.removeChild(script)
-    }
-  }, [])
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     
-    if (!formRef.current || !window.emailjs) return
+    if (!formRef.current) return
 
     setIsSubmitting(true)
+    setStatus({ message: '', type: null })
 
     try {
-      await window.emailjs.sendForm("service_d7p0vlr", "template_ym3afwg", formRef.current)
-      setFormVisible(false)
-      setStatus({ message: "Thanks for reaching out! We'll reply shortly.", type: 'success' })
-      formRef.current.reset()
+      const formData = new FormData(formRef.current)
+      const data = {
+        from_name: formData.get('from_name') as string,
+        last_name: formData.get('last_name') as string,
+        reply_to: formData.get('reply_to') as string,
+        company: formData.get('company') as string,
+        subject: formData.get('subject') as string,
+        message: formData.get('message') as string,
+      }
+
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+
+      const result = await response.json()
+
+      if (response.ok) {
+        setFormVisible(false)
+        setStatus({ 
+          message: "Thanks for reaching out! We'll reply shortly.", 
+          type: 'success' 
+        })
+        formRef.current.reset()
+      } else {
+        throw new Error(result.error || 'Failed to send email')
+      }
     } catch (error) {
-      console.error("EmailJS error:", error)
-      setStatus({ message: "Uh‑oh! Something went wrong. Please try again.", type: 'error' })
+      console.error("Email sending error:", error)
+      setStatus({ 
+        message: "Uh‑oh! Something went wrong. Please try again.", 
+        type: 'error' 
+      })
     } finally {
       setIsSubmitting(false)
     }
