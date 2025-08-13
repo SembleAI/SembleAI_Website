@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Mail, Phone, MapPin } from "lucide-react"
-import logoSvg from "../assets/logo_no_bg.png?url"
+import logoSvg from "../assets/NEW_LOGO.png?url"
 
 export const Footer = () => {
   return (
@@ -16,7 +16,7 @@ export const Footer = () => {
                 <img 
                   src={logoSvg} 
                   alt="Cadence Logo" 
-                  className="h-8 w-auto mr-3" 
+                  className="h-8 w-8 rounded-full object-cover mr-3 bg-background" 
                 />
                 <div className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                   Cadence
