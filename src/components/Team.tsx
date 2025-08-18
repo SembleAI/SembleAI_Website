@@ -38,7 +38,7 @@ export const Team = () => {
                 Ethan, co-founder and CTO of Cadence, leads the technical development of our AI platform. 
                 With a background in math and AI research at Stanford, he's passionate about applying 
                 machine learning to solve complex engineering challenges. At Cadence, he's focused on 
-                developing AI systems that automate fire-safety system design processes, helping engineers 
+                developing AI systems that automate fire and life-safety system design processes, helping engineers 
                 reduce project time from hundreds of hours to minutes while ensuring full code compliance.
               </p>
               
@@ -70,11 +70,11 @@ export const Team = () => {
               </div>
               
               <p className="text-muted-foreground leading-relaxed mb-6">
-                After identifying critical inefficiencies in the fire-safety system integration workflow, Jonathan, 
+                After identifying critical inefficiencies in the fire and life-safety system integration workflow, Jonathan, 
                 co-founder and CEO of Cadence, joined a leading systems integrator to immerse himself in the industry.
                 After witnessing teams spend hundreds of hours on manual design processes that could be automated, he founded 
                 Cadence to revolutionize the industry. Jonathan now leads the company's mission to transform 
-                fire-safety system design through AI-powered automation and regulatory compliance.
+                fire and life-safety system design through AI-powered automation and regulatory compliance.
               </p>
               
               <a 

@@ -3,6 +3,8 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Mail, Phone, MapPin, Send } from "lucide-react"
 import { useState, useRef } from "react"
+import { MagneticButton } from "@/components/ui/visual-effects"
+import { FadeIn } from "@/components/ui/fade-in"
 
 export const Contact = () => {
   const formRef = useRef<HTMLFormElement>(null)
@@ -77,14 +79,16 @@ export const Contact = () => {
       </div>
       
       <div className="relative z-10 max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4 drop-shadow-sm">
-            Ready to Transform Your Design Process?
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto drop-shadow-sm">
-            Get in touch to learn more about Cadence and how we can help automate your fire-safety system designs.
-          </p>
-        </div>
+        <FadeIn>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4 drop-shadow-sm">
+              Ready to Transform Your Design Process?
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto drop-shadow-sm">
+              Get in touch to learn more about Cadence and how we can help automate your fire and life-safety system designs.
+            </p>
+          </div>
+        </FadeIn>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Information */}
@@ -231,15 +235,14 @@ export const Contact = () => {
                     required
                     rows={4}
                     className="w-full"
-                    placeholder="Tell us about your fire-safety system design needs..."
+                    placeholder="Tell us about your fire and life-safety system design needs..."
                   />
                 </div>
 
-                <Button
+                <MagneticButton
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full"
-                  size="lg"
+                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-3 px-6 rounded-lg font-medium transition-colors duration-200"
                 >
                   {isSubmitting ? (
                     "Sending…"
@@ -249,7 +252,7 @@ export const Contact = () => {
                       Send Message
                     </>
                   )}
-                </Button>
+                </MagneticButton>
               </form>
             ) : null}
 

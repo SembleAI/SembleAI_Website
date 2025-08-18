@@ -23,7 +23,7 @@ export const Footer = () => {
                 </div>
               </div>
               <p className="text-muted-foreground text-sm mb-4">
-                AI-powered fire-safety system design automation for the modern integrator.
+                AI-powered fire and life-safety system design automation for the modern integrator.
               </p>
             </div>
 
@@ -51,7 +51,7 @@ export const Footer = () => {
             <div>
               <h3 className="font-semibold text-foreground mb-4">Company</h3>
               <ul className="space-y-3 text-sm text-muted-foreground">
-                <li><a href="#" className="hover:text-primary transition-colors">About</a></li>
+                <li><a href="/about" className="hover:text-primary transition-colors">About</a></li>
                 <li><a href="#contact" className="hover:text-primary transition-colors">Contact</a></li>
               </ul>
             </div>
