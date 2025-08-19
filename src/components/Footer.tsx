@@ -15,11 +15,11 @@ export const Footer = () => {
               <div className="flex items-center mb-4">
                 <img 
                   src={logoSvg} 
-                  alt="Cadence Logo" 
+                  alt="Cadlit Logo" 
                   className="h-8 w-8 rounded-full object-cover mr-3 bg-background" 
                 />
                 <div className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                  Cadence
+                  Cadlit
                 </div>
               </div>
               <p className="text-muted-foreground text-sm mb-4">
@@ -59,7 +59,7 @@ export const Footer = () => {
 
           <div className="border-t border-border mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
             <div className="text-sm text-muted-foreground mb-4 md:mb-0">
-              © 2025 Cadence. All rights reserved.
+              © 2025 Cadlit. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm text-muted-foreground">
               <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>

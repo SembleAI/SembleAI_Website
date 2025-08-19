@@ -85,7 +85,7 @@ export const Contact = () => {
               Ready to Transform Your Design Process?
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto drop-shadow-sm">
-              Get in touch to learn more about Cadence and how we can help automate your fire and life-safety system designs.
+              Get in touch to learn more about Cadlit and how we can help automate your fire and life-safety system designs.
             </p>
           </div>
         </FadeIn>
@@ -102,7 +102,7 @@ export const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Email</p>
-                    <p className="text-foreground font-medium">founders@cadence-systems.com</p>
+                    <p className="text-foreground font-medium">founders@cadlit.com</p>
                   </div>
                 </div>
                 
@@ -129,7 +129,7 @@ export const Contact = () => {
             </div>
 
             <div className="bg-background/60 backdrop-blur-sm border border-border rounded-lg p-6 shadow-lg">
-              <h4 className="text-lg font-semibold text-foreground mb-3">Why Choose Cadence?</h4>
+              <h4 className="text-lg font-semibold text-foreground mb-3">Why Choose Cadlit?</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-center space-x-2">
                   <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
@@ -221,7 +221,7 @@ export const Contact = () => {
                     name="subject"
                     required
                     className="w-full"
-                    placeholder="Interested in Cadence"
+                    placeholder="Interested in Cadlit"
                   />
                 </div>
 
