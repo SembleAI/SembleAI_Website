@@ -113,52 +113,6 @@ export const ScrollProgress = () => {
   )
 }
 
-// Magnetic button effect
-export const MagneticButton = ({ 
-  children, 
-  className = "",
-  ...props 
-}: { 
-  children: React.ReactNode
-  className?: string
-  [key: string]: any
-}) => {
-  const [position, setPosition] = useState({ x: 0, y: 0 })
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLButtonElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect()
-    const centerX = rect.left + rect.width / 2
-    const centerY = rect.top + rect.height / 2
-    const deltaX = (e.clientX - centerX) * 0.15
-    const deltaY = (e.clientY - centerY) * 0.15
-    
-    setPosition({ x: deltaX, y: deltaY })
-  }
-
-  const handleMouseLeave = () => {
-    setPosition({ x: 0, y: 0 })
-  }
-
-  return (
-    <motion.button
-      className={`relative overflow-hidden ${className}`}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      animate={{ x: position.x, y: position.y }}
-      transition={{ type: "spring", stiffness: 200, damping: 20 }}
-      {...props}
-    >
-      <motion.div
-        className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-full"
-        initial={{ scale: 0, opacity: 0 }}
-        whileHover={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 0.3 }}
-      />
-      {children}
-    </motion.button>
-  )
-}
-
 // Typing animation effect
 export const TypewriterText = ({ 
   text, 

@@ -3,7 +3,6 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Mail, Phone, MapPin, Send } from "lucide-react"
 import { useState, useRef } from "react"
-import { MagneticButton } from "@/components/ui/visual-effects"
 import { FadeIn } from "@/components/ui/fade-in"
 
 export const Contact = () => {
@@ -239,20 +238,22 @@ export const Contact = () => {
                   />
                 </div>
 
-                <MagneticButton
+                <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-3 px-6 rounded-lg font-medium transition-colors duration-200"
+                  variant="hero"
+                  size="lg"
+                  className="w-full"
                 >
                   {isSubmitting ? (
                     "Sending…"
                   ) : (
                     <>
-                      <Send className="w-4 h-4 mr-2" />
+                      <Send className="w-4 h-4" />
                       Send Message
                     </>
                   )}
-                </MagneticButton>
+                </Button>
               </form>
             ) : null}
 
