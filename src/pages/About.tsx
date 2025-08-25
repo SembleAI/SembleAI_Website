@@ -25,7 +25,7 @@ const About = () => {
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <FadeIn delay={0.2}>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
-              About <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Cadlit</span>
+              About <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">SembleAI</span>
             </h1>
           </FadeIn>
           
@@ -49,7 +49,7 @@ const About = () => {
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
               After witnessing firsthand the inefficiencies in fire and life-safety system integration, 
               where teams spend hundreds of hours on manual design processes that could be automated, 
-              we founded Cadlit to transform the industry.
+              we founded SembleAI to transform the industry.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
               Our AI-powered platform doesn't just speed up the process – it ensures accuracy, 

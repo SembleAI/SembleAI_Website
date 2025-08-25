@@ -43,7 +43,7 @@ export const Hero = () => {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-snug mb-8 drop-shadow-sm bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent max-w-5xl mx-auto">
               <Typewriter
                 options={{
-                  strings: ['With Cadlit, fire and life-safety system design is automated'],
+                  strings: ['With SembleAI, fire and life-safety system design is automated'],
                   autoStart: true,
                   loop: false,
                   delay: 75,

@@ -17,11 +17,11 @@ export const Navigation = () => {
           <Link to="/" className="flex items-center">
             <img 
               src={logoSvg} 
-              alt="Cadlit Logo" 
+              alt="SembleAI Logo" 
               className="h-8 w-8 rounded-full object-cover mr-3 bg-background" 
             />
             <div className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Cadlit
+              SembleAI
             </div>
           </Link>
 

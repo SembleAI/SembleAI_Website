@@ -94,7 +94,7 @@ export const Solutions = () => {
               Solutions for every facility type
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Cadlit adapts to unique building requirements, ensuring optimal fire and life-safety design
+              SembleAI adapts to unique building requirements, ensuring optimal fire and life-safety design
             </p>
           </div>
         </FadeIn>
