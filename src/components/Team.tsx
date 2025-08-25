@@ -13,7 +13,7 @@ export const Team = () => {
               Meet the <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Team</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              The engineers and innovators behind SembleAI's AI-powered design automation.
+              The engineers and innovators behind Semble AI's AI-powered design automation.
             </p>
           </div>
         </FadeIn>
@@ -35,9 +35,9 @@ export const Team = () => {
               </div>
               
               <p className="text-muted-foreground leading-relaxed mb-6">
-                Ethan, co-founder and CTO of SembleAI, leads the technical development of our AI platform. 
+                Ethan, co-founder and CTO of Semble AI, leads the technical development of our AI platform. 
                 With a background in math and AI research at Stanford, he's passionate about applying 
-                machine learning to solve complex engineering challenges. At SembleAI, he's focused on 
+                machine learning to solve complex engineering challenges. At Semble AI, he's focused on 
                 developing AI systems that automate fire and life-safety system design processes, helping engineers 
                 reduce project time from hundreds of hours to minutes while ensuring full code compliance.
               </p>
@@ -71,9 +71,9 @@ export const Team = () => {
               
               <p className="text-muted-foreground leading-relaxed mb-6">
                 After identifying critical inefficiencies in the fire and life-safety system integration workflow, Jonathan, 
-                co-founder and CEO of SembleAI, joined a leading systems integrator to immerse himself in the industry.
+                co-founder and CEO of Semble AI, joined a leading systems integrator to immerse himself in the industry.
                 After witnessing teams spend hundreds of hours on manual design processes that could be automated, he founded 
-                SembleAI to revolutionize the industry. Jonathan now leads the company's mission to transform 
+                Semble AI to revolutionize the industry. Jonathan now leads the company's mission to transform 
                 fire and life-safety system design through AI-powered automation and regulatory compliance.
               </p>
               

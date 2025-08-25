@@ -160,7 +160,7 @@ export const DesignWorkflowAnimation = ({ className = "" }: { className?: string
                     >
                       <img 
                         src="/src/assets/NEW_LOGO.png" 
-                        alt="Cadlit AI" 
+                        alt="Semble AI" 
                         className="w-8 h-8 rounded-full object-cover"
                       />
                     </motion.div>
