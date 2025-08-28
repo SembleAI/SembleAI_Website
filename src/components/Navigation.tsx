@@ -15,11 +15,7 @@ export const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <img 
-              src={logoSvg} 
-              alt="Semble AI Logo" 
-              className="h-8 w-8 rounded-full object-cover mr-3 bg-background" 
-            />
+            <img  src={logoSvg}  alt="Semble AI Logo"  className="h-8 w-8 rounded-full object-cover mr-3 bg-background"/>
             <div className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               Semble AI
             </div>
@@ -65,11 +61,7 @@ export const Navigation = () => {
 
           {/* Mobile menu button */}
           <div className="md:hidden">
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            >
+            <Button variant="ghost" size="icon" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
               {mobileMenuOpen ? <X /> : <Menu />}
             </Button>
           </div>

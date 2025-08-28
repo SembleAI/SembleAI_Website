@@ -3,82 +3,87 @@ import { Resend } from 'resend';
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export default async function handler(req, res) {
-  // Handle CORS preflight
+  // Enable CORS
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
+  res.setHeader(
+    'Access-Control-Allow-Headers',
+    'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
+  );
+
   if (req.method === 'OPTIONS') {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-    return res.status(200).end();
+    res.status(200).end();
+    return;
   }
 
-  // Only allow POST
   if (req.method !== 'POST') {
-    return res.status(405).json({ ok: false, error: 'Method not allowed' });
+    return res.status(405).json({ error: 'Method not allowed' });
   }
 
   try {
-    const { firstName, lastName, email, company, subject, message } = req.body || {};
+    const { from_name, last_name, reply_to, company, subject, message } = req.body;
 
     // Validate required fields
-    if (!firstName || !lastName || !email || !subject || !message) {
+    if (!from_name || !last_name || !reply_to || !subject || !message) {
+      return res.status(400).json({ error: 'Missing required fields' });
+    }
+
+    // Send email using your verified domain
+    const emailData = {
+      from: 'SembleAI Contact Form <founders@sembleai.com>', // Using your verified domain
+      subject: `New Contact Form Submission: ${subject}`,
+      html: `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+          <h2 style="color: #333; border-bottom: 2px solid #4F46E5; padding-bottom: 10px;">
+            New Contact Form Submission
+          </h2>
+          <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+            <h3 style="color: #4F46E5; margin-top: 0;">Contact Details</h3>
+            <p><strong>Name:</strong> ${from_name} ${last_name}</p>
+            <p><strong>Email:</strong> <a href="mailto:${reply_to}">${reply_to}</a></p>
+            ${company ? `<p><strong>Company:</strong> ${company}</p>` : ''}
+            <p><strong>Subject:</strong> ${subject}</p>
+          </div>
+          <div style="background: white; padding: 20px; border: 1px solid #e9ecef; border-radius: 8px;">
+            <h3 style="color: #333; margin-top: 0;">Message</h3>
+            <p style="line-height: 1.6; white-space: pre-wrap;">${message}</p>
+          </div>
+          <div style="margin-top: 20px; padding: 15px; background: #e7f3ff; border-radius: 8px;">
+            <p style="margin: 0; font-size: 14px; color: #666;">
+              This email was sent from the SembleAI website contact form. Reply directly to this email to respond to ${from_name}.
+            </p>
+          </div>
+        </div>
+      `,
+      reply_to: reply_to,
+    };
+
+    // Send to founders email (will reach both you and your co-founder)
+    const result = await resend.emails.send({
+      ...emailData,
+      to: 'founders@sembleai.com'
+    });
+
+    if (result.error) {
+      console.error('Resend API error:', result.error);
       return res.status(400).json({ 
-        ok: false, 
-        error: 'Missing required fields: firstName, lastName, email, subject, message' 
+        error: 'Failed to send email', 
+        details: result.error.message || result.error 
       });
     }
 
-    // Validate email format
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      return res.status(400).json({ ok: false, error: 'Invalid email format' });
-    }
-
-    // Check if Resend API key is configured
-    if (!process.env.RESEND_API_KEY) {
-      console.error('RESEND_API_KEY not configured');
-      return res.status(500).json({ ok: false, error: 'Email service not configured' });
-    }
-
-    const html = `
-      <div style="font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; line-height:1.6; max-width: 600px;">
-        <h2 style="color: #333; border-bottom: 2px solid #2563eb; padding-bottom: 10px;">New Website Contact</h2>
-        <div style="background: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0;">
-          <p><strong>Name:</strong> ${firstName} ${lastName}</p>
-          <p><strong>Email:</strong> <a href="mailto:${email}" style="color: #2563eb;">${email}</a></p>
-          ${company ? `<p><strong>Company:</strong> ${company}</p>` : ''}
-          <p><strong>Subject:</strong> ${subject}</p>
-        </div>
-        <div style="background: white; padding: 20px; border-left: 4px solid #2563eb; margin: 20px 0;">
-          <h3 style="margin-top: 0; color: #333;">Message:</h3>
-          <div style="white-space: pre-wrap; color: #555;">${message}</div>
-        </div>
-        <div style="font-size: 12px; color: #666; margin-top: 30px;">
-          Sent from Semble AI contact form
-        </div>
-      </div>
-    `;
-
-    const result = await resend.emails.send({
-      from: 'Semble AI Contact <noreply@sembleai.com>',
-      to: 'ethan@sembleai.com',
-      subject: `[SembleAI.com] ${subject}`,
-      html,
-      reply_to: email,
+    console.log('Email sent successfully:', result);
+    res.status(200).json({ 
+      message: 'Email sent successfully', 
+      id: result.data?.id 
     });
 
-    if (result?.error) {
-      console.error('Resend API error:', result.error);
-      return res.status(500).json({ ok: false, error: 'Failed to send email' });
-    }
-
-    console.log('Email sent successfully:', result?.data?.id);
-    return res.status(200).json({ ok: true, id: result?.data?.id });
-
-  } catch (err) {
-    console.error('Email handler error:', err);
-    return res.status(500).json({ 
-      ok: false, 
-      error: process.env.NODE_ENV === 'development' ? err.message : 'Internal server error' 
+  } catch (error) {
+    console.error('Error sending email:', error);
+    res.status(500).json({ 
+      error: 'Failed to send email', 
+      details: error.message 
     });
   }
 }

@@ -8,52 +8,56 @@ import { FadeIn } from "@/components/ui/fade-in"
 export const Contact = () => {
   const formRef = useRef<HTMLFormElement>(null)
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [error, setError] = useState<string | null>(null)
-  const [success, setSuccess] = useState<string | null>(null)
+  const [status, setStatus] = useState<{ message: string; type: 'success' | 'error' | null }>({ message: '', type: null })
+  const [formVisible, setFormVisible] = useState(true)
 
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setError(null);
-    setSuccess(null);
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    
+    if (!formRef.current) return
 
-    const form = new FormData(e.currentTarget);
-    const payload = {
-      firstName: form.get("firstName"),
-      lastName: form.get("lastName"),
-      email: form.get("email"),
-      company: form.get("company"),
-      subject: form.get("subject"),
-      message: form.get("message"),
-    };
+    setIsSubmitting(true)
+    setStatus({ message: '', type: null })
 
     try {
-      const res = await fetch("/api/send-email", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-
-      const ct = res.headers.get("content-type") || "";
-      const body = ct.includes("application/json")
-        ? await res.json()
-        : { ok: false, error: await res.text() || "Unexpected response" };
-
-      if (!res.ok || body.ok === false) {
-        throw new Error(body.error || `Email failed (${res.status})`);
+      const formData = new FormData(formRef.current)
+      const data = {
+        from_name: formData.get('from_name') as string,
+        last_name: formData.get('last_name') as string,
+        reply_to: formData.get('reply_to') as string,
+        company: formData.get('company') as string,
+        subject: formData.get('subject') as string,
+        message: formData.get('message') as string,
       }
 
-      setSuccess("Message sent. We'll get back to you shortly.");
-      
-      // Safe form reset - check if form exists before resetting
-      if (formRef.current) {
-        formRef.current.reset();
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+
+      const result = await response.json()
+
+      if (response.ok) {
+        setFormVisible(false)
+        setStatus({ 
+          message: "Thanks for reaching out! We'll reply shortly.", 
+          type: 'success' 
+        })
+        formRef.current.reset()
+      } else {
+        throw new Error(result.error || 'Failed to send email')
       }
-    } catch (err: any) {
-      console.error('Email error:', err);
-      setError(err.message || "Something went wrong. Please try again.");
+    } catch (error) {
+      console.error("Email sending error:", error)
+      setStatus({ 
+        message: "Uh‑oh! Something went wrong. Please try again.", 
+        type: 'error' 
+      })
     } finally {
-      setIsSubmitting(false);
+      setIsSubmitting(false)
     }
   }
 
@@ -65,9 +69,10 @@ export const Contact = () => {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-80"
           style={{
             backgroundImage: 'url(/house-plan-bg.png)',
-            transform: 'scale(1.02)',
+            transform: 'scale(1.02)', // Slight zoom for better positioning
           }}
         />
+        {/* Overlay layers to ensure text readability */}
         <div className="absolute inset-0 bg-background/70" />
         <div className="absolute inset-0 bg-gradient-to-br from-background/50 via-background/60 to-background/70" />
       </div>
@@ -79,7 +84,7 @@ export const Contact = () => {
               Ready to Transform Your Design Process?
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto drop-shadow-sm">
-              Get in touch to learn more about Semble AI and how we can help automate your fire and life-safety system designs.
+              Get in touch to learn more about SembleAI and how we can help automate your fire and life-safety system designs.
             </p>
           </div>
         </FadeIn>
@@ -123,7 +128,7 @@ export const Contact = () => {
             </div>
 
             <div className="bg-background/60 backdrop-blur-sm border border-border rounded-lg p-6 shadow-lg">
-              <h4 className="text-lg font-semibold text-foreground mb-3">Why Choose Semble AI?</h4>
+              <h4 className="text-lg font-semibold text-foreground mb-3">Why Choose SembleAI?</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-center space-x-2">
                   <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
@@ -147,120 +152,119 @@ export const Contact = () => {
 
           {/* Contact Form */}
           <div className="bg-background/80 backdrop-blur-sm border border-border rounded-lg p-8 shadow-xl">
-            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {formVisible ? (
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="from_name" className="block text-sm font-medium text-foreground mb-2">
+                      First Name *
+                    </label>
+                    <Input
+                      type="text"
+                      id="from_name"
+                      name="from_name"
+                      required
+                      className="w-full"
+                      placeholder="John"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="last_name" className="block text-sm font-medium text-foreground mb-2">
+                      Last Name *
+                    </label>
+                    <Input
+                      type="text"
+                      id="last_name"
+                      name="last_name"
+                      required
+                      className="w-full"
+                      placeholder="Doe"
+                    />
+                  </div>
+                </div>
+
                 <div>
-                  <label htmlFor="firstName" className="block text-sm font-medium text-foreground mb-2">
-                    First Name *
+                  <label htmlFor="reply_to" className="block text-sm font-medium text-foreground mb-2">
+                    Email Address *
+                  </label>
+                  <Input
+                    type="email"
+                    id="reply_to"
+                    name="reply_to"
+                    required
+                    className="w-full"
+                    placeholder="john@company.com"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="company" className="block text-sm font-medium text-foreground mb-2">
+                    Company
                   </label>
                   <Input
                     type="text"
-                    id="firstName"
-                    name="firstName"
-                    required
+                    id="company"
+                    name="company"
                     className="w-full"
-                    placeholder="John"
+                    placeholder="Your Company"
                   />
                 </div>
+
                 <div>
-                  <label htmlFor="lastName" className="block text-sm font-medium text-foreground mb-2">
-                    Last Name *
+                  <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-2">
+                    Subject *
                   </label>
                   <Input
                     type="text"
-                    id="lastName"
-                    name="lastName"
+                    id="subject"
+                    name="subject"
                     required
                     className="w-full"
-                    placeholder="Doe"
+                    placeholder="Interested in SembleAI"
                   />
                 </div>
-              </div>
 
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                  Email Address *
-                </label>
-                <Input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+                    Message *
+                  </label>
+                  <Textarea
+                    id="message"
+                    name="message"
+                    required
+                    rows={4}
+                    className="w-full"
+                    placeholder="Tell us about your fire and life-safety system design needs..."
+                  />
+                </div>
+
+                <Button
+                  type="submit"
+                  disabled={isSubmitting}
+                  variant="hero"
+                  size="lg"
                   className="w-full"
-                  placeholder="john@company.com"
-                />
-              </div>
+                >
+                  {isSubmitting ? (
+                    "Sending…"
+                  ) : (
+                    <>
+                      <Send className="w-4 h-4" />
+                      Send Message
+                    </>
+                  )}
+                </Button>
+              </form>
+            ) : null}
 
-              <div>
-                <label htmlFor="company" className="block text-sm font-medium text-foreground mb-2">
-                  Company
-                </label>
-                <Input
-                  type="text"
-                  id="company"
-                  name="company"
-                  className="w-full"
-                  placeholder="Your Company"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-2">
-                  Subject *
-                </label>
-                <Input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  required
-                  className="w-full"
-                  placeholder="Interested in Semble AI"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                  Message *
-                </label>
-                <Textarea
-                  id="message"
-                  name="message"
-                  required
-                  rows={4}
-                  className="w-full"
-                  placeholder="Tell us about your fire and life-safety system design needs..."
-                />
-              </div>
-
-              <Button
-                type="submit"
-                disabled={isSubmitting}
-                variant="hero"
-                size="lg"
-                className="w-full"
-              >
-                {isSubmitting ? (
-                  "Sending…"
-                ) : (
-                  <>
-                    <Send className="w-4 h-4 mr-2" />
-                    Send Message
-                  </>
-                )}
-              </Button>
-            </form>
-
-            {/* Success Message */}
-            {success && (
-              <div className="mt-4 p-4 rounded-lg bg-green-50 border border-green-200 text-green-800 dark:bg-green-900/30 dark:border-green-700 dark:text-green-300">
-                {success}
-              </div>
-            )}
-
-            {/* Error Message */}
-            {error && (
-              <div className="mt-4 p-4 rounded-lg bg-red-50 border border-red-200 text-red-800 dark:bg-red-900/30 dark:border-red-700 dark:text-red-300">
-                {error}
+            {/* Status Message */}
+            {status.message && (
+              <div className={`mt-4 p-4 rounded-lg ${
+                status.type === 'success' 
+                  ? 'bg-green-50 border border-green-200 text-green-800' 
+                  : 'bg-red-50 border border-red-200 text-red-800'
+              }`}>
+                {status.message}
               </div>
             )}
           </div>
@@ -268,4 +272,4 @@ export const Contact = () => {
       </div>
     </section>
   )
-}
+} 

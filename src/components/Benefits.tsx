@@ -205,11 +205,7 @@ export const Benefits = () => {
 
       {/* Flowing connector to next section */}
       <div className="absolute bottom-0 left-0 right-0 h-24 z-20">
-        <svg
-          className="absolute bottom-0 w-full h-24"
-          viewBox="0 0 1200 100"
-          preserveAspectRatio="none"
-        >
+        <svg className="absolute bottom-0 w-full h-24" viewBox="0 0 1200 100" preserveAspectRatio="none">
           <motion.path
             d="M0,100 C300,20 600,80 900,30 C1050,5 1150,40 1200,20 L1200,100 L0,100 Z"
             fill="hsl(var(--background) / 0.95)"

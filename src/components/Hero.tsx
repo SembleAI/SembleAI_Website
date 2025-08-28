@@ -1,5 +1,3 @@
-import { Button } from "@/components/ui/button"
-import { ArrowRight, Play } from "lucide-react"
 import { FadeIn } from "@/components/ui/fade-in"
 import { InteractiveOrb, AnimatedGrid, SpringCounter } from "@/components/ui/visual-effects"
 import Typewriter from 'typewriter-effect'

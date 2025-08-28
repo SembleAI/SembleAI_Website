@@ -63,11 +63,7 @@ export const Solutions = () => {
 
       {/* Receiving flow from previous section */}
       <div className="absolute top-0 left-0 right-0 h-16 z-10">
-        <svg
-          className="absolute top-0 w-full h-16"
-          viewBox="0 0 1200 60"
-          preserveAspectRatio="none"
-        >
+        <svg className="absolute top-0 w-full h-16" viewBox="0 0 1200 60" preserveAspectRatio="none">
           <motion.path
             d="M0,0 C300,40 600,10 900,35 C1050,50 1150,20 1200,40 L1200,0 L0,0 Z"
             fill="hsl(var(--background) / 0.9)"
