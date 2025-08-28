@@ -159,7 +159,7 @@ export const DesignWorkflowAnimation = ({ className = "" }: { className?: string
                       transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
                     >
                       <img 
-                        src="/src/assets/NEW_LOGO.png" 
+                        src="/logo.png" 
                         alt="Semble AI" 
                         className="w-8 h-8 rounded-full object-cover"
                       />
