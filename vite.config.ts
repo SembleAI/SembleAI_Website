@@ -29,6 +29,7 @@ export default defineConfig(({ mode }) => ({
     rollupOptions: {
       output: {
         manualChunks: undefined,
+        chunkSizeWarningLimit: 2000, // Increase this limit to suppress warnings
         format: 'es',
         entryFileNames: 'assets/[name]-[hash].js',
         chunkFileNames: 'assets/[name]-[hash].js',
@@ -37,4 +38,3 @@ export default defineConfig(({ mode }) => ({
     },
   },
 }));
-
