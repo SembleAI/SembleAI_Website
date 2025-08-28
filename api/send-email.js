@@ -60,7 +60,7 @@ export default async function handler(req, res) {
 
     const result = await resend.emails.send({
       from: 'Semble AI Contact <noreply@sembleai.com>',
-      to: 'founders@sembleai.com',
+      to: 'ethan@sembleai.com',
       subject: `[SembleAI.com] ${subject}`,
       html,
       reply_to: email,
