@@ -51,7 +51,7 @@ export const Footer = () => {
             <div>
               <h3 className="font-semibold text-foreground mb-4">Company</h3>
               <ul className="space-y-3 text-sm text-muted-foreground">
-                <li><a href="/about" className="hover:text-primary transition-colors">About</a></li>
+                <li><a href="/team" className="hover:text-primary transition-colors">About</a></li>
                 <li><a href="#contact" className="hover:text-primary transition-colors">Contact</a></li>
               </ul>
             </div>
