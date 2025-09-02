@@ -1,5 +1,4 @@
-import { Button } from "@/components/ui/button"
-import { ArrowRight, Mail, Phone, MapPin } from "lucide-react"
+import { Link } from "react-router-dom"
 import logoSvg from "../assets/NEW_LOGO.png?url"
 
 export const Footer = () => {
@@ -51,7 +50,7 @@ export const Footer = () => {
             <div>
               <h3 className="font-semibold text-foreground mb-4">Company</h3>
               <ul className="space-y-3 text-sm text-muted-foreground">
-                <li><a href="/team" className="hover:text-primary transition-colors">About</a></li>
+                <li><Link to="/about" className="hover:text-primary transition-colors">About</Link></li>
                 <li><a href="#contact" className="hover:text-primary transition-colors">Contact</a></li>
               </ul>
             </div>
