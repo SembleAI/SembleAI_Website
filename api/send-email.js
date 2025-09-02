@@ -32,11 +32,11 @@ export default async function handler(req, res) {
     // Send email using your verified domain
     const emailData = {
       from: 'SembleAI Contact Form <founders@sembleai.com>', // Using your verified domain
-      subject: `New Contact Form Submission: ${subject}`,
+      subject: `${subject}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #333; border-bottom: 2px solid #4F46E5; padding-bottom: 10px;">
-            New Contact Form Submission
+            ${subject}
           </h2>
           <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
             <h3 style="color: #4F46E5; margin-top: 0;">Contact Details</h3>
@@ -48,11 +48,6 @@ export default async function handler(req, res) {
           <div style="background: white; padding: 20px; border: 1px solid #e9ecef; border-radius: 8px;">
             <h3 style="color: #333; margin-top: 0;">Message</h3>
             <p style="line-height: 1.6; white-space: pre-wrap;">${message}</p>
-          </div>
-          <div style="margin-top: 20px; padding: 15px; background: #e7f3ff; border-radius: 8px;">
-            <p style="margin: 0; font-size: 14px; color: #666;">
-              This email was sent from the SembleAI website contact form. Reply directly to this email to respond to ${from_name}.
-            </p>
           </div>
         </div>
       `,
