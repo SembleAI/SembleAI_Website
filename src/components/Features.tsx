@@ -9,7 +9,7 @@ export const Features = () => {
     {
       icon: Brain,
       title: "AI-Powered Design",
-      description: "Advanced AI analyzes CAD files and generates complete fire and life-safety layouts with optimal device placement and full code compliance."
+      description: "Advanced AI analyzes building designs and generates complete fire and life-safety layouts with optimal device placement and full code compliance."
     },
     {
       icon: Clock,

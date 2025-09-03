@@ -29,7 +29,7 @@ export const DesignWorkflowAnimation = ({ className = "" }: { className?: string
 
   const steps = [
     { 
-      title: "Upload CAD", 
+      title: "Upload File", 
       color: "text-blue-500",
       description: "Import your floor plan",
       icon: Upload
@@ -59,7 +59,7 @@ export const DesignWorkflowAnimation = ({ className = "" }: { className?: string
       {/* Main Visual Area */}
       <div className="relative w-full h-full">
         
-        {/* Step 0: Upload CAD */}
+        {/* Step 0: Upload File */}
         <AnimatePresence>
           {currentStep === 0 && (
             <motion.div
@@ -70,7 +70,7 @@ export const DesignWorkflowAnimation = ({ className = "" }: { className?: string
               className="absolute inset-0 flex items-center justify-center"
             >
               <div className="relative">
-                {/* CAD File Preview */}
+                {/* File File Preview */}
                 <motion.div
                   className="w-72 h-48 bg-background border-2 border-dashed border-primary/50 rounded-lg relative overflow-hidden"
                   initial={{ scale: 0.95 }}
@@ -91,7 +91,7 @@ export const DesignWorkflowAnimation = ({ className = "" }: { className?: string
                       <FileText className="w-12 h-12 text-primary" />
                     </motion.div>
                     <div className="text-center bg-background/80 backdrop-blur-sm rounded-lg p-3">
-                      <div className="text-sm font-semibold mb-1">Floor Plan.dwg</div>
+                      <div className="text-sm font-semibold mb-1">floor_plan.pdf</div>
                       <div className="text-xs text-muted-foreground">2.4 MB • Ready for upload</div>
                     </div>
                   </div>
@@ -120,7 +120,7 @@ export const DesignWorkflowAnimation = ({ className = "" }: { className?: string
               className="absolute inset-0 flex items-center justify-center"
             >
               <div className="relative">
-                {/* Background CAD with analysis overlay */}
+                {/* Background File with analysis overlay */}
                 <div className="w-72 h-48 bg-background rounded-lg border border-border relative overflow-hidden">
                   <div 
                     className="absolute inset-0 bg-cover bg-center opacity-20"
