@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import { YCBadge } from "@/components/ui/yc-badge"
 import logoSvg from "../assets/NEW_LOGO.png?url"
 
 export const Footer = () => {
@@ -24,6 +25,7 @@ export const Footer = () => {
               <p className="text-muted-foreground text-sm mb-4">
                 AI-powered fire and life-safety system design automation for the modern integrator.
               </p>
+              <YCBadge variant="footer" />
             </div>
 
             {/* Product */}

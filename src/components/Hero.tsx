@@ -1,5 +1,6 @@
 import { FadeIn } from "@/components/ui/fade-in"
 import { InteractiveOrb, AnimatedGrid, SpringCounter } from "@/components/ui/visual-effects"
+import { YCBadge } from "@/components/ui/yc-badge"
 import Typewriter from 'typewriter-effect'
 
 export const Hero = () => {
@@ -28,6 +29,11 @@ export const Hero = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto">
         <div className="text-center">
+          {/* YC Badge */}
+          <div className="mb-4">
+            <YCBadge variant="hero" />
+          </div>
+
           {/* Badge */}
           <FadeIn delay={0.2}>
             <div className="inline-flex items-center rounded-full border border-border/50 bg-background/80 backdrop-blur-sm px-4 py-2 text-sm text-muted-foreground mb-8 shadow-lg">

@@ -2,6 +2,7 @@ import { Navigation } from "@/components/Navigation"
 import { Team } from "@/components/Team"
 import { Footer } from "@/components/Footer"
 import { FadeIn } from "@/components/ui/fade-in"
+import { YCBadge } from "@/components/ui/yc-badge"
 
 const About = () => {
   return (
@@ -23,6 +24,12 @@ const About = () => {
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto text-center">
+          <FadeIn delay={0.1}>
+            <div className="mb-6">
+              <YCBadge variant="hero" />
+            </div>
+          </FadeIn>
+          
           <FadeIn delay={0.2}>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
               About <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Semble AI</span>
