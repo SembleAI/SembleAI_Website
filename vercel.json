@@ -1,5 +1,20 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "framework": "vite"
+  "framework": "vite",
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "sembleai.com" }],
+      "destination": "https://www.sembleai.com/$1",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    { "source": "/favicon.ico", "headers": [{ "key": "Content-Type", "value": "image/x-icon" }] },
+    { "source": "/favicon.png", "headers": [{ "key": "Content-Type", "value": "image/png" }] },
+    { "source": "/icon-192.png", "headers": [{ "key": "Content-Type", "value": "image/png" }] },
+    { "source": "/icon-512.png", "headers": [{ "key": "Content-Type", "value": "image/png" }] },
+    { "source": "/manifest.webmanifest", "headers": [{ "key": "Content-Type", "value": "application/manifest+json" }] }
+  ]
 }
