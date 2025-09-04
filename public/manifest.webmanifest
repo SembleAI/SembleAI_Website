@@ -1,11 +1,37 @@
 {
-  "name": "Semble AI",
-  "short_name": "SembleAI",
+  "name": "Semble AI - AI-Powered Fire and Life-Safety System Design",
+  "short_name": "Semble AI",
+  "description": "Transform 300-hour engineering projects into 30-minute automated workflows with AI-driven fire and life-safety system design.",
+  "start_url": "/",
+  "scope": "/",
   "icons": [
-    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
-    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+    { 
+      "src": "/favicon.ico", 
+      "sizes": "48x48", 
+      "type": "image/x-icon" 
+    },
+    { 
+      "src": "/apple-touch-icon.png", 
+      "sizes": "180x180", 
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    { 
+      "src": "/icon-192.png", 
+      "sizes": "192x192", 
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    { 
+      "src": "/icon-512.png", 
+      "sizes": "512x512", 
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
   ],
   "theme_color": "#2563eb",
   "background_color": "#ffffff",
-  "display": "standalone"
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "categories": ["business", "productivity", "engineering"]
 }
