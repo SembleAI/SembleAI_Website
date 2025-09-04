@@ -109,5 +109,40 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    /* Fix overscroll behavior */
+    overscroll-behavior: none;
+    overscroll-behavior-y: none;
+  }
+
+  html {
+    /* Prevent bounce effect on Safari */
+    overscroll-behavior: none;
+    overscroll-behavior-y: none;
+    /* Set background to match theme */
+    background-color: hsl(var(--background));
+  }
+
+  /* Additional Safari-specific fixes */
+  html, body {
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* Webkit-specific overscroll fix */
+  body::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  body::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted));
+    border-radius: 4px;
+  }
+
+  body::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground));
   }
 }
